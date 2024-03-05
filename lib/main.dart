@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Mqtt test'),
     );
   }
 }
@@ -89,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.purple,
                 onPressed: () {
                   senMsg('servo_on');
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Open gate')));
                   setState(() {});
                 },
                 child: const Center(
