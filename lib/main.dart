@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final MqttServerClient client = MqttServerClient('broker.mqtt-dashboard.com', '');
+  final MqttServerClient client = MqttServerClient('5887441a3b754669be5455279dbfd5c0.s1.eu.hivemq.cloud', '8883');
   bool isOpen = false;
   senMsg(String message) {
     final MqttClientPayloadBuilder builder = MqttClientPayloadBuilder();
@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final MqttConnectMessage connectMessage = MqttConnectMessage()
         .withClientIdentifier('Mqtt_MyClientUniqueId')
         .startClean()
-        .authenticateAs('username', 'password')
+        .authenticateAs('viinkepin', 'Admin123#')
         .withWillTopic('willtopic')
         .withWillMessage('Will message')
         .withWillQos(MqttQos.atLeastOnce);
